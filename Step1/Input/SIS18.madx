@@ -249,8 +249,8 @@ value, IQF, IQD;
 
 ptc_create_universe;
 ptc_create_layout,time=true, model=2, exact=true, method=6, nst=3;
-ptc_script, file="./SIS18/resplit.ptc";
-ptc_script, file="./print_flat_file.ptc"; 
+ptc_script, file="./Input/resplit.ptc";
+ptc_script, file="./Input/print_flat_file.ptc"; 
 select, flag=ptc_twiss, clear;
 select, flag=ptc_twiss, column=name, s, betx, bety, Dx, Dy, px, py, disp3, disp3p, disp1, disp1p;
 ptc_twiss, icase=5, no=4, deltap_dependency, closed_orbit, file=ptc_twiss_matched.tfs, table=ptc_twiss_matched;
