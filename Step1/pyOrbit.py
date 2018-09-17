@@ -200,10 +200,3 @@ for turn in range(p['turns_max']):
 	output.save_to_matfile('output')
 
 	output.update()
-        
-pr.disable()
-s = StringIO.StringIO()
-sortby = 'cumulative'
-ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
-ps.print_stats()
-print s.getvalue()
