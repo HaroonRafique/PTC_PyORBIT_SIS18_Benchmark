@@ -1,7 +1,7 @@
 import numpy as np
 
 # Switch for SIS18 parameters
-Step1to6 = 0
+Step1to6 = 1
 
 # Constants
 beta = 0.15448
@@ -55,7 +55,7 @@ parameters = {
 }
 
 switches = {
-	'Horizontal': 0,							# Used to run the simulation with an initial horizontal (=1) or vertical (=0) bunch
+	'Horizontal': 1,							# Used to run the simulation with an initial horizontal (=1) or vertical (=0) bunch
 	'SliceBySlice': 0,
 	'Frozen': 1,								# SIS18 uses Frozen
 	'MinPathLength': 1E-8,

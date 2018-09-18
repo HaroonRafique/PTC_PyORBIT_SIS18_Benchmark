@@ -24,7 +24,7 @@ from PyNAFF import naff
 import matplotlib.pyplot as plt
 
 # PARAMETERS
-horizontal = 0    
+horizontal = 1    
 n_part = 100
 n_turns = 1024
 min_particle = 1
