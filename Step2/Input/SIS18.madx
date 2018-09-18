@@ -22,12 +22,8 @@ QS2D:  QUADRUPOLE, TYPE= QD2, L= 1.0400000,  K1:= iqd;
 QS3T:  QUADRUPOLE, TYPE= QD3, L= 0.4804000,  K1:= 2*iqf;
 
 ! ------------------- normal sextupole ---------------------------------
-!S:     MULTIPOLE, K2L = 0.2;
-!ms:multipole, knl:={0, 0, k2l}; New format
-
+! Step 2: (Q_x, Q_y) = (0.338, 0.2), Sextupole off
 S:     MULTIPOLE, knl:= {0.0, 0.0, 0.0};
-!S:     SEXTUPOLE, K2=10.0;
-!S:     MULTIPOLE, knl:={0.0, 0.0, 0.0};
 
 ! ---------------------------  LINE DEFINITION -------------------------
 CELL:  LINE=(DR1,RB,DR2,RB,DR3,QS1F,DR4,QS2D,DR5,QS3T,DR6);
@@ -232,8 +228,8 @@ value, IQF, IQD;
 
 ptc_create_universe;
 ptc_create_layout,time=true, model=2, exact=true, method=6, nst=3;
-ptc_script, file="resplit.ptc";
-ptc_script, file="print_flat_file.ptc"; 
+ptc_script, file="Input/resplit.ptc";
+ptc_script, file="Input/print_flat_file.ptc"; 
 select, flag=ptc_twiss, clear;
 select, flag=ptc_twiss, column=name, s, betx, bety, Dx, Dy, px, py, disp3, disp3p, disp1, disp1p;
 ptc_twiss, icase=5, no=4, deltap_dependency, closed_orbit, file=ptc_twiss_matched.tfs, table=ptc_twiss_matched;

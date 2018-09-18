@@ -57,7 +57,7 @@ if slicebyslice:
 from lib.output_dictionary import *
 from lib.pyOrbit_GenerateInitialDistribution2 import *
 from lib.save_bunch_as_matfile import *
-from lib.PyOrbit_LinearRestoringForce import *
+from lib.pyOrbit_LinearRestoringForce import *
 
 print "Start ..."
 comm = orbit_mpi.mpi_comm.MPI_COMM_WORLD
@@ -68,7 +68,7 @@ rank = orbit_mpi.MPI_Comm_rank(comm)
 #----------------------------------------------
 from lib.mpi_helpers import mpi_mkdir_p
 mpi_mkdir_p('input')
-mpi_mkdir_p('output')Please could you 
+mpi_mkdir_p('output')
 mpi_mkdir_p('lost')
 
 

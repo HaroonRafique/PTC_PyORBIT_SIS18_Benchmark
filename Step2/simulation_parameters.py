@@ -55,9 +55,9 @@ parameters = {
 }
 
 switches = {
-	'Horizontal': 1,
+	'Horizontal': 0,							# Used to run the simulation with an initial horizontal (=1) or vertical (=0) bunch
 	'SliceBySlice': 0,
-	'Frozen': 1,
+	'Frozen': 1,								# SIS18 uses Frozen
 	'MinPathLength': 1E-8,
 	'RestoringForce': RestoringForce,
 	'InitialParticleTransversePosition':5E-3,	# Used for single particle sims

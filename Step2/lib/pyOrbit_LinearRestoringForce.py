@@ -6,6 +6,7 @@
 import math
 import orbit_mpi
 
+from orbit_mpi import mpi_datatype, mpi_op
 from bunch import Bunch
 
 def LinearRestoringForce(bunch, force):
@@ -24,7 +25,7 @@ def LinearRestoringForce(bunch, force):
 	for i in range(numprocs):
 		nparts_arr_local.append(0)
 			
-	nparts_arr_local[rank] = b.getSize()
+	nparts_arr_local[rank] = bunch.getSize()
 	data_type = mpi_datatype.MPI_INT
 	op = mpi_op.MPI_SUM
 
