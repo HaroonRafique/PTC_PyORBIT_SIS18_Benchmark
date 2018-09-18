@@ -15,3 +15,4 @@ rm -r input
 rm -r lost
 rm output/mainbunch*
 rm output.mat
+rm lib/*.pyc
