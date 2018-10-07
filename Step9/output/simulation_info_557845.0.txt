@@ -1,0 +1,3 @@
+PyOrbit path:  /afs/cern.ch/project/LIUsc/space_charge/Codes/py-orbit_revison1291_dev_FrozenPIC
+using 8 CPUs
+****************************************

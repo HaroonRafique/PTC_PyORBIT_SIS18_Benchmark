@@ -1,0 +1,14 @@
+# HTCondor submit description file
+
+request_cpus            = 8
+#+BigMemJob              = True
+#+MaxRuntime             = 604800
+getenv                  = True
+notification            = Always
+
+executable              = run_mpiHTCondorjob_CH2.sh
+arguments               = $(request_cpus)
+output                  = output_$(cluster).$(Process).txt
+log                     = logfile_$(cluster).$(Process).txt
++JobFlavour="nextweek"
+queue
