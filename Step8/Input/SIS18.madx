@@ -1,0 +1,255 @@
+TITLE, " -- SIS18 with a sextupole -- ";
+
+!---------------------  DRIFT SPACES DEFINITION  ---------------------
+DR1: DRIFT, TYPE=DRIF, L=0.6450000;
+DR2: DRIFT, TYPE=DRIF, L=0.9700000;
+DR3: DRIFT, TYPE=DRIF, L=6.8390117;
+DR4: DRIFT, TYPE=DRIF, L=0.6000000;
+DR5: DRIFT, TYPE=DRIF, L=0.7098000;
+DR6: DRIFT, TYPE=DRIF, L=0.4998000;
+
+!--------------------------  BENDING MAGNET ---------------------------
+ALPHA  := 15  * RADDEG;
+LL     := 150 * RADDEG;
+PFR    := 7.3 * RADDEG;
+RB: SBEND,TYPE=B1,L= LL,ANGLE= ALPHA,E1= PFR,E2=PFR,HGAP= 0.035;
+
+! ------------------- horizontal quadrupole ----------------------------
+iqf=0.311872401;
+iqd=-0.496504354;
+QS1F:  QUADRUPOLE, TYPE= QD1, L= 1.0400000,  K1:= iqf;
+QS2D:  QUADRUPOLE, TYPE= QD2, L= 1.0400000,  K1:= iqd;
+QS3T:  QUADRUPOLE, TYPE= QD3, L= 0.4804000,  K1:= 2*iqf;
+
+! ------------------- normal sextupole ---------------------------------
+! Step 8: (Q_x, Q_y) = (0.3504, 0.2), Sextupole on
+S:     MULTIPOLE, knl:= {0.0, 0.0, 0.2};
+
+! ---------------------------  LINE DEFINITION -------------------------
+CELL:  LINE=(DR1,RB,DR2,RB,DR3,QS1F,DR4,QS2D,DR5,QS3T,DR6);
+
+MACHINE: LINE=(CELL, S, 11*CELL);
+
+!USE, MACHINE;
+
+SIS18  : SEQUENCE, REFER=ENTRY, L =  216.719993472 ;
+DR1 ,  at =   0.0 ;
+RB ,  at =   0.645 ;
+DR2 ,  at =   3.26299387799 ;
+RB ,  at =   4.23299387799 ;
+DR3 ,  at =   6.85098775598 ;
+QS1F ,  at =   13.689999456 ;
+DR4 ,  at =   14.729999456 ;
+QS2D ,  at =   15.329999456 ;
+DR5 ,  at =   16.369999456 ;
+QS3T ,  at =   17.079799456 ;
+DR6 ,  at =   17.560199456 ;
+S ,  at =   18.059999456 ;
+DR1 ,  at =   18.059999456 ;
+RB ,  at =   18.704999456 ;
+DR2 ,  at =   21.322993334 ;
+RB ,  at =   22.292993334 ;
+DR3 ,  at =   24.910987212 ;
+QS1F ,  at =   31.749998912 ;
+DR4 ,  at =   32.789998912 ;
+QS2D ,  at =   33.389998912 ;
+DR5 ,  at =   34.429998912 ;
+QS3T ,  at =   35.139798912 ;
+DR6 ,  at =   35.620198912 ;
+DR1 ,  at =   36.119998912 ;
+RB ,  at =   36.764998912 ;
+DR2 ,  at =   39.38299279 ;
+RB ,  at =   40.35299279 ;
+DR3 ,  at =   42.9709866679 ;
+QS1F ,  at =   49.8099983679 ;
+DR4 ,  at =   50.8499983679 ;
+QS2D ,  at =   51.4499983679 ;
+DR5 ,  at =   52.4899983679 ;
+QS3T ,  at =   53.1997983679 ;
+DR6 ,  at =   53.6801983679 ;
+DR1 ,  at =   54.1799983679 ;
+RB ,  at =   54.8249983679 ;
+DR2 ,  at =   57.4429922459 ;
+RB ,  at =   58.4129922459 ;
+DR3 ,  at =   61.0309861239 ;
+QS1F ,  at =   67.8699978239 ;
+DR4 ,  at =   68.9099978239 ;
+QS2D ,  at =   69.5099978239 ;
+DR5 ,  at =   70.5499978239 ;
+QS3T ,  at =   71.2597978239 ;
+DR6 ,  at =   71.7401978239 ;
+DR1 ,  at =   72.2399978239 ;
+RB ,  at =   72.8849978239 ;
+DR2 ,  at =   75.5029917019 ;
+RB ,  at =   76.4729917019 ;
+DR3 ,  at =   79.0909855799 ;
+QS1F ,  at =   85.9299972799 ;
+DR4 ,  at =   86.9699972799 ;
+QS2D ,  at =   87.5699972799 ;
+DR5 ,  at =   88.6099972799 ;
+QS3T ,  at =   89.3197972799 ;
+DR6 ,  at =   89.8001972799 ;
+DR1 ,  at =   90.2999972799 ;
+RB ,  at =   90.9449972799 ;
+DR2 ,  at =   93.5629911579 ;
+RB ,  at =   94.5329911579 ;
+DR3 ,  at =   97.1509850359 ;
+QS1F ,  at =   103.989996736 ;
+DR4 ,  at =   105.029996736 ;
+QS2D ,  at =   105.629996736 ;
+DR5 ,  at =   106.669996736 ;
+QS3T ,  at =   107.379796736 ;
+DR6 ,  at =   107.860196736 ;
+DR1 ,  at =   108.359996736 ;
+RB ,  at =   109.004996736 ;
+DR2 ,  at =   111.622990614 ;
+RB ,  at =   112.592990614 ;
+DR3 ,  at =   115.210984492 ;
+QS1F ,  at =   122.049996192 ;
+DR4 ,  at =   123.089996192 ;
+QS2D ,  at =   123.689996192 ;
+DR5 ,  at =   124.729996192 ;
+QS3T ,  at =   125.439796192 ;
+DR6 ,  at =   125.920196192 ;
+DR1 ,  at =   126.419996192 ;
+RB ,  at =   127.064996192 ;
+DR2 ,  at =   129.68299007 ;
+RB ,  at =   130.65299007 ;
+DR3 ,  at =   133.270983948 ;
+QS1F ,  at =   140.109995648 ;
+DR4 ,  at =   141.149995648 ;
+QS2D ,  at =   141.749995648 ;
+DR5 ,  at =   142.789995648 ;
+QS3T ,  at =   143.499795648 ;
+DR6 ,  at =   143.980195648 ;
+DR1 ,  at =   144.479995648 ;
+RB ,  at =   145.124995648 ;
+DR2 ,  at =   147.742989526 ;
+RB ,  at =   148.712989526 ;
+DR3 ,  at =   151.330983404 ;
+QS1F ,  at =   158.169995104 ;
+DR4 ,  at =   159.209995104 ;
+QS2D ,  at =   159.809995104 ;
+DR5 ,  at =   160.849995104 ;
+QS3T ,  at =   161.559795104 ;
+DR6 ,  at =   162.040195104 ;
+DR1 ,  at =   162.539995104 ;
+RB ,  at =   163.184995104 ;
+DR2 ,  at =   165.802988982 ;
+RB ,  at =   166.772988982 ;
+DR3 ,  at =   169.39098286 ;
+QS1F ,  at =   176.22999456 ;
+DR4 ,  at =   177.26999456 ;
+QS2D ,  at =   177.86999456 ;
+DR5 ,  at =   178.90999456 ;
+QS3T ,  at =   179.61979456 ;
+DR6 ,  at =   180.10019456 ;
+DR1 ,  at =   180.59999456 ;
+RB ,  at =   181.24499456 ;
+DR2 ,  at =   183.862988438 ;
+RB ,  at =   184.832988438 ;
+DR3 ,  at =   187.450982316 ;
+QS1F ,  at =   194.289994016 ;
+DR4 ,  at =   195.329994016 ;
+QS2D ,  at =   195.929994016 ;
+DR5 ,  at =   196.969994016 ;
+QS3T ,  at =   197.679794016 ;
+DR6 ,  at =   198.160194016 ;
+DR1 ,  at =   198.659994016 ;
+RB ,  at =   199.304994016 ;
+DR2 ,  at =   201.922987894 ;
+RB ,  at =   202.892987894 ;
+DR3 ,  at =   205.510981772 ;
+QS1F ,  at =   212.349993472 ;
+DR4 ,  at =   213.389993472 ;
+QS2D ,  at =   213.989993472 ;
+DR5 ,  at =   215.029993472 ;
+QS3T ,  at =   215.739793472 ;
+DR6 ,  at =   216.220193472 ;
+ENDSEQUENCE;
+
+!PRINT,FULL
+!TWISS, file=madx_twiss.tfs
+
+
+!------- End of basic SIS18 stuff -------
+/******************************************************************************
+ * BEAM and USE
+ ******************************************************************************/
+speedc = 299792458;
+En_k = 11.4e-3;
+beta_rel = 0.15448;
+gamma_rel =1.0122;
+m_p = 938.27208e-3; !GeV/c^2
+En = m_p + En_k;
+pce = sqrt( (En*En) - (m_p*m_p) ); ! =146.501e-3
+
+!dpp=2.5e-4;
+dpp=0;
+bunch_length=(0.15448*299792458*3472.7e-9)/4.; !40.206868
+
+beam, particle=proton, pc=pce, sige=dpp, sigt=bunch_length, exn=3.1425e-6, eyn=2.32e-6, et=40.206868;
+!beam, particle=proton, pc=pce, sige=dpp;
+
+!stop;
+use, sequence=SIS18;
+  
+!PR.BWSH65     :  MONITOR  , L = 0.0; 
+
+!seqedit, sequence=SIS18;
+  !flatten;
+  !install, element=PR.BWSH65, at=0.0, from=PS65$START;
+  !cycle , start=PR.BWSH65;
+  !flatten;
+  !endedit;
+!save,file='./SIS18/SIS18.seq';
+
+
+use, sequence=SIS18;
+select, flag=twiss, column=NAME, KEYWORD, S, L, X, Y, BETX, BETY, ALFX ,ALFY, MUX, MUY, DX, DY, DPX, DPY;
+!twiss,  sequence=SIS18, file=twiss_SIS18.tfs; save;
+
+
+value, pc, beam->pc, beam->energy;
+
+/******************************************************************
+ * MATCHING
+ ******************************************************************/
+ptc_twiss_tune_macro_false_split: macro={
+  ptc_create_universe;
+  ptc_create_layout, time=true, model=2, exact=true, method=6, nst=3;
+  !ptc_script, file="resplit.ptc";
+  ptc_twiss, closed_orbit, table=ptc_twiss, file=ptc_twiss_unmatched.tfs, icase=56,no=2,summary_table=ptc_twiss_summary;
+  qx0=table(ptc_twiss_summary,Q1);
+  qy0=table(ptc_twiss_summary,Q2);
+  value, qx0, qy0;
+  ptc_end;
+};
+
+use, sequence=SIS18;
+match, use_macro;
+  vary,   name=iqf, step=1.0E-6;
+  vary,   name=iqd, step=1.0E-6;
+  USE_MACRO, name=ptc_twiss_tune_macro_false_split;
+  CONSTRAINT, expr=  table(ptc_twiss_summary,Q1)= 0.3504;
+  CONSTRAINT, expr=  table(ptc_twiss_summary,Q2)= 0.2;
+  JACOBIAN,calls=10000,bisec=3,TOLERANCE=1.0E-21;
+ENDMATCH;
+value, IQF, IQD;
+
+/******************************************************************
+ * Generate flat file
+ ******************************************************************/
+
+ptc_create_universe;
+ptc_create_layout,time=true, model=2, exact=true, method=6, nst=3;
+ptc_script, file="./Input/resplit.ptc";
+ptc_script, file="./Input/print_flat_file.ptc"; 
+select, flag=ptc_twiss, clear;
+select, flag=ptc_twiss, column=name, s, betx, bety, Dx, Dy, px, py, disp3, disp3p, disp1, disp1p;
+ptc_twiss, icase=5, no=4, deltap_dependency, closed_orbit, file=ptc_twiss_matched.tfs, table=ptc_twiss_matched;
+ptc_end;
+
+use, sequence=SIS18;
+!select, flag=twiss, column=NAME, KEYWORD, S, L, X, Y, BETX, BETY, ALFX ,ALFY, MUX, MUY, DX, DY, DPX, DPY;
+twiss,  sequence=SIS18, file=twiss_SIS18_matched.tfs; save;
